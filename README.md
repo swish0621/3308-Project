@@ -11,6 +11,7 @@ Team/Product Name
 ## **Scheduled Meeting Time**
 Sundays @ 6 pm
 
+## **Project Overview & Planning**
 ### **Motivation**
 
 ### **Risks**
