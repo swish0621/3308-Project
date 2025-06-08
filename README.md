@@ -11,12 +11,12 @@ Team/Product Name
 ## **Scheduled Meeting Time**
 Sundays @ 6 pm
 
-# **Motivation**
+### **Motivation**
 
-# **Risks**
+### **Risks**
 
-# **Mitigation Strategy**
+### **Mitigation Strategy**
 
-# **Development Method:**
+### **Development Method:**
 
-# **Project Tracking Software Link:**
+### **Project Tracking Software Link:**
