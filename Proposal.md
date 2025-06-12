@@ -1,4 +1,4 @@
-Poject Title: Sentimaker
+Poject Title: Rage Ratio
 
 Team Number: 4
 
@@ -22,12 +22,11 @@ Meeting Time: Sundays 6:00pm MST
 
 Vision Statement: 
 
-	Sentimaker helps creators craft emotionally resonant content that connects, converts, and inspires. Whether you're writing captions, emails, or campaigns, Sentimaker gives your words the right tone, every time.
- 
+    To create a platform that empowers gamers to track live updates and game releases while analyzing public sentiment, offering real-time insights into how the gaming community reacts to new content.
+
 Motivation: 
-
-	Poor tone choices can offend or confuse. Sentimaker helps flag emotionally misaligned or risky phrasing before it goes live.
-
+    
+    Updates to existing games have a major impact on the gaming community. The developers' choices in balancing gameplay, adding new content, or modifying base mechanics can trigger a wide range of reactions. These responses can be seen quickly across various online platforms, changing public perception and player engagement. By capturing and analyzing this sentiment in real time, we aim to better understand how updates influence community satisfaction.
 
 Risks: 
 
