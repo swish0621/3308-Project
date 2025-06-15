@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import requests
 from datetime import datetime, timedelta
 
+
 load_dotenv()
 
 # load credentials from .env 
@@ -60,6 +61,40 @@ def update_env(new_token, expiration ):
     with open(".env", "w") as file:
         file.writelines(lines)
 
+
 # helper to check if token is expired for use in queries
 def is_token_expired():
     return datetime.now() >= datetime.fromisoformat(expiration_date)
+
+
+def search_game(game_name):
+    # check if access token is expired
+    if is_token_expired():
+        get_access_token()
+
+    # create headers
+    url = "https://api.igdb.com/v4/games"
+    headers = {
+        "Client-ID": client_id,
+        "Authorization": f"Bearer {access_token}"
+    }
+
+    # create query body 
+    body = f'''
+    search"{game_name}"; 
+    fields id, 
+        name, 
+        summary, 
+        first_release_date, 
+        genres.name, 
+        platforms.name,
+        cover.url,
+        websites.url,
+        involved_companies.company.name,
+        updated_at;
+    limit 1; '''
+
+    # send query
+    response = requests.post(url, headers=headers, data=body)
+    response.raise_for_status()
+    return response.json()
