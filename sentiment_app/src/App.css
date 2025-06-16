@@ -1,0 +1,54 @@
+.search-banner {
+  background-color: #222;
+  padding: 10px 20px;
+  width: 90%;
+  text-align: center;
+  border-bottom: 2px solid #444;
+}
+
+.search-bar {
+  padding: 8px;
+  width: 300px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* start from top */
+  align-items: center;
+  height: 100vh; /* ensure full height */
+  position: relative; /* for positioning context */
+}
+
+.App > * { /* adjust this to move down from the top*/
+  margin-top: 10%; 
+}
+
+.tab-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tab {
+  padding: 20px;
+  background-color: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tab:hover {
+  background-color: #555;
+}
