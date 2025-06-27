@@ -7,18 +7,6 @@ def load_bearer_token(path="twitter_bearer_token.txt"):
         return file.read().strip()
 
 def get_replies(tweet_id, max_results=10):
-    """
-    Retrieve recent replies (tweets in the same conversation) to the given tweet ID.
-    
-    Parameters:
-    - tweet_id: The ID of the original tweet whose conversation replies we want.
-    - max_results: The maximum number of replies to retrieve (up to 100 per request).
-    
-    Handles 429 (Too Many Requests) error by waiting and retrying.
-    
-    Returns:
-    - A list of dictionaries, each containing reply text, author_id, and created_at timestamp.
-    """
     url = "https://api.twitter.com/2/tweets/search/recent"
     bearer_token = load_bearer_token()
     
@@ -61,17 +49,6 @@ def get_replies(tweet_id, max_results=10):
         return replies
 
 def add_replies(df, max_results=10):
-    """
-    For each row in the input DataFrame (representing original tweets),
-    retrieve replies and build a new DataFrame containing reply details.
-    
-    Parameters:
-    - df: dataframe with columns 'tweet_id', 'title', and 'period'
-    - max_results: Number of replies to attempt to retrieve per tweet
-    
-    Returns:
-    - A dataframe containing period, tweet_id, title, reply_text, author_id, created_at
-    """
     rows = []
     
     # iterate over each tweet in the input dataframe
