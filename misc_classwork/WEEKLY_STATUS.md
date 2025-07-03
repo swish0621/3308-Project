@@ -26,3 +26,23 @@
 - Exploring and learning about React to design the front end of the application.
 - Created basic React samples.
 - Decided that a tile-based interface will be the most suitable design for the application's needs.
+
+
+
+# Weekly Status Report
+
+## Update Two
+
+#### Nick
+- Set up cloud data storage using MongoDB
+  
+#### Nicole
+- In the process of obtaining TikTok API access (application submitted, status pending)
+- Started working on connecting data fetches to MongoDB
+
+#### Kenji
+- 
+
+#### Lucas
+- Cleaned up project organization
+- Started connecting backend to frontend using React and Flask
