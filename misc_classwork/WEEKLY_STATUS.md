@@ -46,3 +46,12 @@
 #### Lucas
 - Cleaned up project organization
 - Started connecting backend to frontend using React and Flask
+
+
+
+#Weekly Status Report
+
+## Update Three
+
+#### Nick 
+- creating unit tests for the webpage 
