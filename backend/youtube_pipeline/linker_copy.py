@@ -3,12 +3,15 @@
 Created on Fri May  9 20:02:22 2025
 
 @author: kenji
+modified by: Nicole
+
 """
 
 import pandas as pd
-from get_ids import search_videos
-from add_comments import add_comments
-from calc_sentiment import calc_sentiment
+from youtube.get_ids import search_videos
+from youtube.add_comments import add_comments
+from youtube.calc_sentiment import calc_sentiment
+from mongodb.mongo import get_collection, insert_mult_docs
 
 import matplotlib.pyplot as plt
 
@@ -36,6 +39,15 @@ def main():
     
     print("Calculating Sentiment...")
     df = calc_sentiment(df)
+    
+    # add topic/game name
+    df["game"] = topic
+    
+    # insert into MongoDB
+    youtube_collection = get_collection("YoutubeSamples")
+    num_inserted = insert_mult_docs(youtube_collection, df.to_dict("records"))
+    print(f"Inserted {num_inserted} YouTube records into MongoDB.")
+    
     
     print(f"""Finished!
           Number of Comments: {num_comments}
