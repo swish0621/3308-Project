@@ -29,7 +29,7 @@ client = MongoClient(uri)
 # Get collection from the media sentiment database
 def get_collection(name):
     db = client["MediaSentiment"]
-    returb db[name]
+    return db[name]
     
 # Insert multiple documents
 def insert_mult_docs(collection, data_list):

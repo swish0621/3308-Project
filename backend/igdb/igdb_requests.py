@@ -42,6 +42,9 @@ def get_access_token():
     # update enviornment 
     os.environ["TWITCH_ACCESS_TOKEN"] = new_token
     os.environ["EXPIRES"] = expiration.isoformat()
+    global access_token, expiration_date
+    access_token = new_token
+    expiration_date = expiration.isoformat()
     return 
 
 
@@ -81,7 +84,7 @@ def search_game(game_name):
 
     # create query body 
     body = f'''
-    search"{game_name}"; 
+    search "{game_name}"; 
     fields id, 
         name, 
         summary, 
