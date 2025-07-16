@@ -36,13 +36,13 @@ def extract_sentiment_scores(df):
         comments = group["comment"].tolist()
         if comments:
             sentiments = classify_sentiment(comments)
-            for i, row in group.iterrows():
+            for sentiments, (_, row) in zip(sentiments, group.iterrows()):
                 sentiment_results.append({
                     "period": period,
                     "video_id": row["video_id"],
                     "title": row["title"],
                     "comment": row["comment"],
-                    "sentiment": sentiments[i - group.index[0]] 
+                    "sentiment": sentiments
                 })
 
     return pd.DataFrame(sentiment_results)

@@ -2,6 +2,7 @@ from pymongo import MongoClient
 import os
 import dotenv
 from dotenv import load_dotenv
+import certifi
 
 load_dotenv()
 
@@ -9,7 +10,7 @@ username = os.getenv("MONGO_USERNAME")
 password = os.getenv("MONGO_PASSWORD")
 
 uri = f"mongodb+srv://{username}:{password}@3308project.hvwxwa0.mongodb.net/?retryWrites=true&w=majority"
-client = MongoClient(uri)
+client = MongoClient(uri,  tlsCAFile=certifi.where())
 
 #   proposed general structure for DB looks like:
 #   
