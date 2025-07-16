@@ -2,10 +2,14 @@ from reddit.reddit_requests import search_keyword
 from mongodb.mongo import get_collection, insert_mult_docs
 from youtube_pipeline.calc_sentiment import calc_sentiment  # reuses existing sentiment code
 import pandas as pd
+import sys 
 
 
 def main():
-    topic = "The Last of Us"
+    if len(sys.argv) < 2:
+        print("Usage error")
+        sys.exit()
+    topic = sys.argv[1]
     print(f"Searching Reddit for: {topic}")
 
     reddit_data = search_keyword(topic)

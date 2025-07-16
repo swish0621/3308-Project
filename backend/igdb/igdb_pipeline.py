@@ -1,8 +1,12 @@
 from igdb.igdb_requests import search_game
 from mongodb.mongo import * 
+import sys
 
 def main():
-    game_name = "The Last of Us"
+    if len(sys.argv) < 2:
+        print("Usage error")
+        sys.exit()
+    game_name = sys.argv[1]
     print(f"Searching IGDB for: {game_name}")
 
     try:
