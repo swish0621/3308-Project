@@ -17,6 +17,7 @@ Team Ralphie / Rage Ratio
 ## 🚀 How to Run This Project
 
 ### Prerequisites
+- Firefox (front end must be run here)
 - [Python 3.10+](https://www.python.org/downloads/)
 - [Node.js & npm](https://nodejs.org/)
 
@@ -40,7 +41,7 @@ npm start
 The frontend will run on [http://localhost:3000](http://localhost:3000)
 
 ### 3. Usage
-- Open the frontend URL in your browser.
+- Open the frontend URL in Firefox.
 - Enter a game title to analyze sentiment and view live data.
 
 ---
