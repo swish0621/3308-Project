@@ -2,6 +2,7 @@ from pymongo import MongoClient
 import os
 import dotenv
 from dotenv import load_dotenv
+import certifi
 
 load_dotenv()
 
@@ -9,7 +10,7 @@ username = os.getenv("MONGO_USERNAME")
 password = os.getenv("MONGO_PASSWORD")
 
 uri = f"mongodb+srv://{username}:{password}@3308project.hvwxwa0.mongodb.net/?retryWrites=true&w=majority"
-client = MongoClient(uri)
+client = MongoClient(uri,  tlsCAFile=certifi.where())
 
 #   proposed general structure for DB looks like:
 #   
@@ -29,7 +30,7 @@ client = MongoClient(uri)
 # Get collection from the media sentiment database
 def get_collection(name):
     db = client["MediaSentiment"]
-    returb db[name]
+    return db[name]
     
 # Insert multiple documents
 def insert_mult_docs(collection, data_list):

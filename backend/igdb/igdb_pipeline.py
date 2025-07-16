@@ -1,5 +1,5 @@
 from igdb.igdb_requests import search_game
-from mongodb.mongo import get_collection, insert_mult_docs
+from mongodb.mongo import * 
 
 def main():
     game_name = "The Last of Us"
@@ -11,16 +11,21 @@ def main():
             print("No results found.")
             return
 
-        # Add context or metadata
-        for result in results:
-            result["query"] = game_name
-            result["source"] = "IGDB"
-
-        # Insert into MongoDB
+        # Add context or metadata if not exists
         games_collection = get_collection("Games")
-        inserted = insert_mult_docs(games_collection, results)
+        exists = read_doc(games_collection, {"query": game_name})
+        if not (exists):
+            for result in results:
+                result["query"] = game_name
+                result["source"] = "IGDB"
 
-        print(f"Inserted {inserted} IGDB records into MongoDB.")
+            # Insert into MongoDB
+            inserted = insert_mult_docs(games_collection, results)
+            print(f"Inserted {inserted} IGDB records into MongoDB.")
+
+        else:
+            print("Record already exists.")
+    
 
     except Exception as e:
         print(f"Error: {e}")

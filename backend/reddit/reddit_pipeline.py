@@ -1,6 +1,6 @@
 from reddit.reddit_requests import search_keyword
-from MongoDB.mongo import get_collection, insert_mult_docs
-from youtube.calc_sentiment import calc_sentiment  # reuses existing sentiment code
+from mongodb.mongo import get_collection, insert_mult_docs
+from youtube_pipeline.calc_sentiment import calc_sentiment  # reuses existing sentiment code
 import pandas as pd
 
 
@@ -20,6 +20,10 @@ def main():
     comment_mask = df["type"] == "comment"
     if comment_mask.any():
         df_comments = df[comment_mask].copy()
+        df_comments['date'] = pd.to_datetime(df_comments['date'])
+        df_comments['period'] = df_comments['date'].dt.to_period('D')
+        df_comments = df_comments.rename(columns={"body": "comment"})
+        df_comments['video_id'] = None
         df_comments = calc_sentiment(df_comments)
         df.update(df_comments)  # merge sentiment columns back into full df
 
