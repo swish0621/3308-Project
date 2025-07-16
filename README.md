@@ -1,3 +1,4 @@
+
 # Web-Project
 Team 4
 Team Ralphie / Rage Ratio
@@ -10,6 +11,40 @@ Team Ralphie / Rage Ratio
   GitHub: `swish0621`
 - **Nicole Sawtelle**  
   GitHub: `Nsawtelle`
+
+---
+
+## 🚀 How to Run This Project
+
+### Prerequisites
+- [Python 3.10+](https://www.python.org/downloads/)
+- [Node.js & npm](https://nodejs.org/)
+
+### 1. Backend Setup (Flask)
+```bash
+cd backend
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+# Create a .env file with your API keys and secrets (see .env.example if available)
+python app.py
+```
+The backend will run on [http://127.0.0.1:5000](http://127.0.0.1:5000)
+
+### 2. Frontend Setup (React)
+```bash
+cd frontend/sentiment_app
+npm install
+npm start
+```
+The frontend will run on [http://localhost:3000](http://localhost:3000)
+
+### 3. Usage
+- Open the frontend URL in your browser.
+- Enter a game title to analyze sentiment and view live data.
+
+---
+
 ## **Scheduled Meeting Time**
 Sundays @ 6 pm MST
 

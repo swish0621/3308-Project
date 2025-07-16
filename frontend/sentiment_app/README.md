@@ -1,3 +1,29 @@
+# How to Run This Project
+
+**1. Activate your Python virtual environment:**
+
+```sh
+source venv/bin/activate
+```
+
+**2. In one terminal, start the backend:**
+
+```sh
+cd backend
+python3 app.py
+```
+
+**3. In a separate terminal, start the frontend:**
+
+```sh
+cd frontend/sentiment_app
+npm start
+```
+
+The backend will run on [http://127.0.0.1:5000](http://127.0.0.1:5000) and the frontend on [http://localhost:3000](http://localhost:3000).
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
