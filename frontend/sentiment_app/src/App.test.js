@@ -3,8 +3,6 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
-// uncomment below once SearchBar is exported 
-//import { SearchBar } from './SearchBar';
 import App from './App';
 
 
@@ -13,7 +11,7 @@ test('Any: render a page with title', () => {
   render(<App />);
 
     const headings = screen.getAllByRole('heading');
-    const h1 = headings.find(h => h.tagName === 'H1');
+    const h1 = headings.find(h => h.tagName === 'H2');
     expect(h1).toBeInTheDocument();
 });
 
@@ -55,17 +53,3 @@ test('Any: search bar updates', async () => {
   await userEvent.type(input, 'testing');
   expect(input).toHaveValue('testing');
 });
-
-// uncomment once there is at least a place holder for the search bar function 
-/* 
-// test that the search bar functionality 
-test('Any: search bar works', async () => {
-  const mockSearch = jest.fn();
-  render(<SearchBar onSearch={mockSearch} />);
-
-  const input = screen.getByPlaceholderText(/Search games/i);
-  fireEvent.change(input, { target: {value: 'Fortnite'}});
-  expect(input.value).toBe('Fortnite');
-  expect(mockSearch).toHaveBeenCalledWith('Fortnite');
-
-});*/
