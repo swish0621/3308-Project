@@ -2,19 +2,19 @@
 
 <hr>
 
-<img src="images/homepage.png" alt="homepage screenshot" WIDTH=100% ALIGN="left" style="margin:5px" />
+<img src="images/homepage.png" alt="homepage screenshot" WIDTH=100% ALIGN="left" style="margin:5px" /> <br>
 
-<img src="images/cod.png" alt="call of duty screenshot" WIDTH=100% ALIGN="left" style="margin:5px" />
+<img src="images/cod.png" alt="call of duty screenshot" WIDTH=100% ALIGN="left" style="margin:5px" /> <br>
 
-<img src="images/dym_gta.png" alt="did you mean grand theft auto screenshot" WIDTH=100% ALIGN="left" style="margin:5px" />
+<img src="images/dym_gta.png" alt="did you mean grand theft auto screenshot" WIDTH=100% ALIGN="left" style="margin:5px" /> <br>
 
-<img src="images/gta.png" alt="grand theft auto screenshot" WIDTH=100% ALIGN="left" style="margin:5px" />
+<img src="images/gta.png" alt="grand theft auto screenshot" WIDTH=100% ALIGN="left" style="margin:5px" /> <br>
 
-<img src="images/dym_overwatch.png" alt="did you mean overwatch screenshot" WIDTH=100% ALIGN="left" style="margin:5px" />
+<img src="images/dym_overwatch.png" alt="did you mean overwatch screenshot" WIDTH=100% ALIGN="left" style="margin:5px" /> <br>
 
-<img src="images/overwatch.png" alt="overwatch screenshot" WIDTH=100% ALIGN="left" style="margin:5px" />
+<img src="images/overwatch.png" alt="overwatch screenshot" WIDTH=100% ALIGN="left" style="margin:5px" /> <br>
 
-<img src="images/fortnight.png" alt="fortnight screenshot" WIDTH=100% ALIGN="left" style="margin:5px" />
+<img src="images/fortnight.png" alt="fortnight screenshot" WIDTH=100% ALIGN="left" style="margin:5px" /> <br>
 
 
 
