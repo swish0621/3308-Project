@@ -23,16 +23,17 @@ Team Ralphie / Rage Ratio
 
 ### 1. Backend Setup (Flask)
 ```bash
-cd backend
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
+cd backend
 # Create a .env file with your API keys and secrets (see .env.example if available)
 python app.py
 ```
 The backend will run on [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
 ### 2. Frontend Setup (React)
+#### Open a new shell
 ```bash
 cd frontend/sentiment_app
 npm install
