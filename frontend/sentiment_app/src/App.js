@@ -60,6 +60,8 @@ function GamePage({ name }) {
   const [igdb, setIgdb] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [sentiment, setSentiment] = useState(null)
+  const [sentimentLoading, setSentimentLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
@@ -77,6 +79,28 @@ function GamePage({ name }) {
         setError(e.message);
         setLoading(false);
       });
+  }, [name]);
+
+  // Sentiment Fetch
+  useEffect(() => {
+    const fetchSentiment = async () => {
+      setSentimentLoading(true);
+      try {
+        let res = await fetch(`http://localhost:5000/api/sentiment/youtube/${encodeURIComponent(name)}`);
+        if (!res.ok) {
+          res = await fetch (`http://localhost:5000/api/sentiment/reddit/${encodeURIComponent(name)}`);
+        }
+        const data = await res.json();
+        if (res.ok) {
+          setSentiment(data);
+        }
+      } catch (err) {
+        console.error("Sentiment fetch failed:", err);
+      } finally {
+        setSentimentLoading(false);
+      }
+    };
+    fetchSentiment();
   }, [name]);
 
   return (
@@ -117,6 +141,24 @@ function GamePage({ name }) {
           <div style={{clear:'both'}}></div>
         </div>
       )}
+
+      <div style={{ marginTop: 32, textAlign: 'center' }}>
+        <h2 style={{ color: '#ffe082' }}>Sentiment Analysis</h2>
+        {sentimentLoading ? (
+          <p style={{ color: '#aaa' }}>Loading sentiment...</p>
+        ) : sentiment ? (
+          <div style={{ fontSize: '1.2em', color: '#eee' }}>
+            <p><b>Total Comments Analyzed:</b> {sentiment.total_comments}</p>
+            <p><b>Positive:</b> {sentiment.sentiment_distribution.Positive}%</p>
+            <p><b>Neutral:</b> {sentiment.sentiment_distribution.Neutral}%</p>
+            <p><b>Negative:</b> {sentiment.sentiment_distribution.Negative}%</p>
+          </div>
+        ) : (
+          <p style={{ color: '#aaa' }}>No sentiment data available for this game.</p>
+        )
+      }
+
+      </div>
     </div>
   );
 }
