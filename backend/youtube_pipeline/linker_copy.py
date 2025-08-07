@@ -8,15 +8,21 @@ modified by: Nicole
 """
 
 import pandas as pd
-from youtube.get_ids import search_videos
-from youtube.add_comments import add_comments
-from youtube.calc_sentiment import calc_sentiment
+from youtube_pipeline.get_ids import search_videos
+from youtube_pipeline.add_comments import add_comments
+from youtube_pipeline.calc_sentiment import calc_sentiment
 from mongodb.mongo import get_collection, insert_mult_docs
-
+import sys
+import datetime
 import matplotlib.pyplot as plt
 
 def main():
-    topic = "Call of Duty" # Edit later to take these as param
+    if len(sys.argv) < 2:
+        print("Usage error")
+        sys.exit()
+    topic = sys.argv[1]
+    print(f"Searching Youtube for: {topic}")
+
     start_time = "2020-01-01T00:00:00Z"
     end_time = "2022-02-01T00:00:00Z"
     period = [0,1,0] # years, months, days

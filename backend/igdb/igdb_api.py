@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from igdb.igdb_requests import search_game
+from igdb.igdb_requests import *
 
 igdb_api = Blueprint('igdb_api', __name__)
 

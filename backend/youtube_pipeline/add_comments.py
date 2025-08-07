@@ -9,16 +9,18 @@ Get comments given youtube IDs
 
 import requests
 import pandas as pd
+import os
+import dotenv
+from dotenv import load_dotenv
 
-def load_api_key(path="youtube_api.txt"):
-    with open(path, "r") as file:
-        return file.read().strip()
+
+load_dotenv()
+api_key = os.getenv("YOUTUBE_KEY")
 
 
 
 def get_comments(video_id, max_comments):
     url = "https://www.googleapis.com/youtube/v3/commentThreads"
-    api_key = load_api_key()
     params = {
         "part": "snippet",
         "videoId": video_id,

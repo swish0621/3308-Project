@@ -49,7 +49,7 @@ body, html, #root {
   height: 100dvh;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .App > * { /* adjust this to move down from the top*/

@@ -87,15 +87,20 @@ function GamePage({ name }) {
       setSentimentLoading(true);
       try {
         let res = await fetch(`http://localhost:5000/api/sentiment/youtube/${encodeURIComponent(name)}`);
-        if (!res.ok) {
+        let data = null;
+        if(res.ok){
+          data = await res.json();
+        } 
+        else{
           res = await fetch (`http://localhost:5000/api/sentiment/reddit/${encodeURIComponent(name)}`);
+          if(res.ok){
+            data = await res.json();
+          }
         }
-        const data = await res.json();
-        if (res.ok) {
-          setSentiment(data);
-        }
+        setSentiment(data || null);
       } catch (err) {
         console.error("Sentiment fetch failed:", err);
+        setSentiment(null);
       } finally {
         setSentimentLoading(false);
       }

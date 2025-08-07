@@ -10,10 +10,13 @@ Purpose: Grab Youtube IDs based on a topic and time period
 import requests
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+import os
+import dotenv
+from dotenv import load_dotenv
 
-def load_api_key(path="youtube_api.txt"):
-    with open(path, "r") as file:
-        return file.read().strip()
+
+load_dotenv()
+api_key = os.getenv("YOUTUBE_KEY")
     
 def calc_date(curr_date, period):
     """
@@ -26,7 +29,6 @@ def calc_date(curr_date, period):
     
 
 def search_videos(topic, start_time, end_time, max_results, period):
-    API_key = load_api_key()
 
     if max_results > 50:
         print(f"Error: {max_results} videos per period exceeds Youtube API limit. Reducing to 50")
@@ -49,7 +51,7 @@ def search_videos(topic, start_time, end_time, max_results, period):
             "publishedAfter": lower_date,
             "publishedBefore": upper_date,
             "maxResults": max_results,
-            "key": API_key
+            "key": api_key
         }
 
         response = requests.get(url, params=params)
