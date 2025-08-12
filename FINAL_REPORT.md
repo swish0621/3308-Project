@@ -9,7 +9,7 @@
 [View Trello Board](https://trello.com/b/5J2OVDnW/3308-team-4)  
 
 **Video Demo:**  
-**  
+*https://youtu.be/cZClp7QFFmQ*  
 
 **GitHub Repository:**  
 [https://github.com/swish0621/3308-Project.git](https://github.com/swish0621/3308-Project.git)  
