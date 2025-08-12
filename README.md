@@ -3,8 +3,6 @@
 Team 4
 Team Ralphie / Rage Ratio
 
-- **Kenji Ramcharansingh**  
-  GitHub: `KenjiR1`
 - **Lucas Stackhouse**  
   GitHub: `lust6199`
 - **Nicholas Swisher**  
