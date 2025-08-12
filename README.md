@@ -1,7 +1,7 @@
 
 # Web-Project
 Team 4
-Team Ralphie / Rage Ratio
+Team Ralphie / GameScope
 
 - **Lucas Stackhouse**  
   GitHub: `lust6199`
